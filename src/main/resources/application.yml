@@ -20,3 +20,8 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL9Dialect
         format_sql: true
+
+  security:
+    user:
+      name: admin
+      password: password

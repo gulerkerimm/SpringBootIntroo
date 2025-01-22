@@ -5,6 +5,8 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter//tüm fieldlar için getter metodunun tanımlanmasını sağlar
 @Setter//tüm fieldlar için setter metodunun tanımlanmasını sağlar
@@ -49,5 +51,8 @@ public class Student {
     private LocalDateTime createDate=LocalDateTime.now();
 
     //getter-setter
+
+    @OneToMany(mappedBy = "student")
+    private List<Book> bookList=new ArrayList<>();
 
 }

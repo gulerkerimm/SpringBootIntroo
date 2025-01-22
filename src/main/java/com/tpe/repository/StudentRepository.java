@@ -40,10 +40,13 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
     //ile doğrudan DTO objesine dönüştürelim
     @Query("SELECT new com.tpe.dto.StudentDTO(s) FROM Student s WHERE s.id=:pId")
     Optional<StudentDTO> findStudentDtoById(@Param("pId") Long id);
+
+    //ÖDEV:16
+    List<Student> findAllByLastnameIgnoreCase(String lastName);//Spring implemente eder
+
+    //select * from Student where name=:pWord OR lastname=:pWord1
+    List<Student> findByNameOrLastname(String word, String word1);
 }
-
-
-
 
 
 
